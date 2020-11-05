@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16946bdd62b1dd842bf51fdcf70e8b61, type: 3}
   m_Name: InitRuntimeData
   m_EditorClassIdentifier: 
-  currentScore: 155
+  totalScore: 0
+  currentScore: 0
+  isDay: 1
+  _isAggro: 0
+  day: 2

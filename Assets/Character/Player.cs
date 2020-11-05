@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     // References
     [SerializeField] Camera _cam;
     [SerializeField] GameObject _arrowPrefab;
+    [SerializeField] RuntimeData _runtimeData;
     private CharacterController _controller;
 
 
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Aim();
+        _isSprinting = Input.GetKey(KeyCode.LeftShift);
         Move();
         Fire();
     }
@@ -51,7 +53,7 @@ public class Player : MonoBehaviour
     }
 
     void Move() {
-        float speed = (_isSprinting) ? _movementSpeed * 2 : _movementSpeed;
+        float speed = (_isSprinting) ? _movementSpeed * 1.5f : _movementSpeed;
         if (_controller.isGrounded) {
             _moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             _moveDirection = transform.TransformDirection(_moveDirection);
